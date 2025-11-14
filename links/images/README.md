@@ -4,10 +4,10 @@ Esta pasta deve conter as seguintes imagens:
 
 ## 🖼️ Imagens Necessárias
 
-1. **logo.jpg** - Logo da Fernanda Bento Nails
-   - Formato: JPG
+1. **logo.png** - Logo da Fernanda Bento Nails
+   - Formato: PNG
    - Tamanho recomendado: 400x400px (proporção quadrada)
-   - Fundo: Transparente ou branco
+   - Fundo: **Transparente** (obrigatório)
 
 2. **fernanda.jpeg** - Foto de perfil da Fernanda
    - Formato: JPEG
@@ -20,13 +20,13 @@ Esta pasta deve conter as seguintes imagens:
 1. Acesse: https://github.com/robsonj82/fernanda-links-page
 2. Navegue até `links/images/`
 3. Clique em "Add file" > "Upload files"
-4. Arraste `logo.jpg` e `fernanda.jpeg`
+4. Arraste `logo.png` e `fernanda.jpeg`
 5. Commit as mudanças
 
 ### Opção 2: Via Git Local
 ```bash
 # Copie as imagens para esta pasta
-cp /caminho/para/logo.jpg links/images/
+cp /caminho/para/logo.png links/images/
 cp /caminho/para/fernanda.jpeg links/images/
 
 # Faça commit
@@ -39,12 +39,12 @@ git push
 Se você tem acesso FTP direto ao servidor:
 1. Conecte via FTP
 2. Navegue até `/public_html/links/images/`
-3. Faça upload de `logo.jpg` e `fernanda.jpeg`
+3. Faça upload de `logo.png` e `fernanda.jpeg`
 
 ## ⚠️ Importante
 
 - **Nomes dos arquivos devem ser exatamente:**
-  - `logo.jpg` (minúsculas)
+  - `logo.png` (minúsculas)
   - `fernanda.jpeg` (minúsculas)
 
 - **Não renomeie os arquivos** - o código está configurado para esses nomes específicos
@@ -52,7 +52,7 @@ Se você tem acesso FTP direto ao servidor:
 ## ✅ Como Verificar
 
 Após o upload, acesse:
-- https://fernandabentonails.com.br/links/images/logo.jpg
+- https://fernandabentonails.com.br/links/images/logo.png
 - https://fernandabentonails.com.br/links/images/fernanda.jpeg
 
 Se as imagens carregarem, está tudo certo! 🎉

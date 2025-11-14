@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+      - 'claude/**'  # ✅ Deploy automático para branches do Claude
+  workflow_dispatch:  # ✅ Permite rodar manualmente com gh CLI
 
 jobs:
   deploy:
@@ -20,10 +21,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
+          server-dir: /links/
           local-dir: ./links/
-          server-dir: /public_html/links/
-          dangerous-clean-slate: true
-          dry-run: false
-          log-level: verbose
+          dangerous-clean-slate: false
