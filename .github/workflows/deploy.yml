@@ -22,6 +22,6 @@ jobs:
           port: 21
           protocol: ftp
           server-dir: /public_html/links
-          local-dir: ./links
+          local-dir: ./links/
           dangerous-clean-slate: true
           dry-run: false
