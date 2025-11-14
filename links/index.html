@@ -322,24 +322,28 @@
         // Animação de entrada para os links
         document.addEventListener('DOMContentLoaded', function() {
             const links = document.querySelectorAll('.link-button');
-            links.forEach((link, index) => {
-                link.style.opacity = '0';
-                link.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    link.style.transition = 'all 0.5s ease';
-                    link.style.opacity = '1';
-                    link.style.transform = 'translateY(0)';
-                }, 100 * index);
-            });
 
-            // Analytics (opcional - adicione seu tracking aqui)
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const linkName = this.querySelector('span').textContent;
-                    console.log('Link clicado:', linkName);
-                    // Aqui você pode adicionar Google Analytics ou outro tracking
+            // Só anima se o JavaScript estiver funcionando
+            if (links.length > 0) {
+                links.forEach((link, index) => {
+                    link.style.opacity = '0';
+                    link.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        link.style.transition = 'all 0.5s ease';
+                        link.style.opacity = '1';
+                        link.style.transform = 'translateY(0)';
+                    }, 100 * index);
                 });
-            });
+
+                // Analytics (opcional - adicione seu tracking aqui)
+                links.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        const linkName = this.querySelector('span').textContent;
+                        console.log('Link clicado:', linkName);
+                        // Aqui você pode adicionar Google Analytics ou outro tracking
+                    });
+                });
+            }
         });
 
         // Efeito de parallax suave no scroll (se adicionar mais conteúdo)
