@@ -1,1 +1,355 @@
-<h1>Link na bio</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Links importantes - Todos os meus links em um só lugar">
+    <title>Meus Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --link-bg: #ffffff;
+            --link-hover: #f0f0f0;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-bio {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--link-bg);
+            padding: 18px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .link-button:hover::before {
+            left: 100%;
+        }
+
+        .link-button:hover {
+            background: var(--link-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .link-button i {
+            font-size: 20px;
+            min-width: 20px;
+        }
+
+        .link-button.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .link-button.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .link-button.email {
+            background: #EA4335;
+            color: white;
+        }
+
+        .link-button.website {
+            background: #5865F2;
+            color: white;
+        }
+
+        .link-button.youtube {
+            background: #FF0000;
+            color: white;
+        }
+
+        .link-button.linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .link-button.twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .link-button.tiktok {
+            background: #000000;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 22px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .profile-name {
+                font-size: 24px;
+            }
+
+            .profile-bio {
+                font-size: 14px;
+            }
+
+            .link-button {
+                font-size: 14px;
+                padding: 16px 20px;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* Loading Animation */
+        .link-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Seção de Perfil -->
+        <div class="profile-section">
+            <img src="https://via.placeholder.com/120" alt="Foto de Perfil" class="profile-image" id="profileImage">
+            <h1 class="profile-name">Seu Nome</h1>
+            <p class="profile-bio">
+                Aqui vai sua bio! Conte um pouco sobre você e o que as pessoas vão encontrar nos seus links.
+            </p>
+        </div>
+
+        <!-- Container de Links -->
+        <div class="links-container">
+            <a href="https://instagram.com/seuusuario" target="_blank" rel="noopener noreferrer" class="link-button instagram">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="link-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+
+            <a href="https://youtube.com/@seucanal" target="_blank" rel="noopener noreferrer" class="link-button youtube">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </a>
+
+            <a href="https://linkedin.com/in/seuusuario" target="_blank" rel="noopener noreferrer" class="link-button linkedin">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://twitter.com/seuusuario" target="_blank" rel="noopener noreferrer" class="link-button twitter">
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+            </a>
+
+            <a href="https://tiktok.com/@seuusuario" target="_blank" rel="noopener noreferrer" class="link-button tiktok">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+
+            <a href="https://seusite.com.br" target="_blank" rel="noopener noreferrer" class="link-button website">
+                <i class="fas fa-globe"></i>
+                <span>Meu Site</span>
+            </a>
+
+            <a href="mailto:seu@email.com" class="link-button email">
+                <i class="fas fa-envelope"></i>
+                <span>E-mail</span>
+            </a>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <p>✨ Feito com carinho</p>
+        </div>
+    </div>
+
+    <script>
+        // Animação de entrada para os links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.link-button');
+            links.forEach((link, index) => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    link.style.transition = 'all 0.5s ease';
+                    link.style.opacity = '1';
+                    link.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+
+            // Analytics (opcional - adicione seu tracking aqui)
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const linkName = this.querySelector('span').textContent;
+                    console.log('Link clicado:', linkName);
+                    // Aqui você pode adicionar Google Analytics ou outro tracking
+                });
+            });
+        });
+
+        // Efeito de parallax suave no scroll (se adicionar mais conteúdo)
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.container');
+            if (parallax) {
+                parallax.style.transform = 'translateY(' + scrolled * 0.1 + 'px)';
+            }
+        });
+    </script>
+</body>
+</html>
