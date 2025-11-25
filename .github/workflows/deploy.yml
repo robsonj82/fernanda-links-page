@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 'claude/**'  # ✅ Deploy automático para branches do Claude
   workflow_dispatch:  # ✅ Permite rodar manualmente com gh CLI
 
 jobs:
